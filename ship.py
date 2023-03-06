@@ -1,11 +1,16 @@
 import pygame
+import PIL
+from PIL import Image
+imagee=Image.open('images/ship.bmp')
+new_ship=imagee.resize((1000,1000))
+new_ship.save('newship.bmp')
 class Ship():
    def __init__(self, ai_settings, screen):
         """Initiatise the ship and set its startng position."""
         self.screen = screen
         self.ai_settings = ai_settings
         #Load the ship image and get its rect (rectangle(?))
-        self.image=pygame.image.load('images/ship.bmp')
+        self.image=pygame.image.load('images/newship.bmp')
         self.rect=self.image.get_rect()
         self.screen_rect=screen.get_rect()
 
